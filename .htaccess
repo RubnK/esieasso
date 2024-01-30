@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^associations/\b(.*)$ controllers/afficher_association.php?url=$1 [QSA,L]
+RewriteRule ^register([/]$|$) controllers/afficher_register.php [QSA,L]
+RewriteRule ^logout([/]$|$) controllers/afficher_logout.php [QSA,L]
+RewriteRule ^validate([/]$|$) controllers/afficher_validate.php [QSA,L]
+RewriteRule ^login([/]$|$) controllers/afficher_connexion.php [QSA,L]
+RewriteRule ^associations([/]$|$) controllers/afficher_catalogue.php [QSA,L]
+RewriteRule ^account([/]$|$) controllers/afficher_account.php [QSA,L]
+RewriteRule ^([/]$|$) controllers/afficher_evenements.php [QSA,L]
+RewriteRule ^asso_admin/\b(.*)$ controllers/afficher_admin_asso.php?url=$1 [QSA,L]
+RewriteRule ^event_create([/]$|$) controllers/afficher_creer_evenement.php [QSA,L]
+RewriteRule ^evenements([/]$|$) controllers/afficher_evenements.php [QSA,L]
